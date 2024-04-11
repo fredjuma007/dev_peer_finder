@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useRouter } from "next/navigation"
+import { createRoomAction } from "./actions"
  
 const formSchema = z.object({
   name: z.string().min(1).max(50),
@@ -34,8 +35,10 @@ export function CreateRoomForm() {
         },
       })
 
-     function onSubmit(values: z.infer<typeof formSchema>) {
+     async function onSubmit(values: z.infer<typeof formSchema>) {
         // TODO: invoke a server action to store the data in the database
+       await createRoomAction(values)
+       router.push("/")
       }
 
       return (
