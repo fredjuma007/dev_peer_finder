@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { db } from "@/db";
 import Link from "next/link";
 import {
   Card,
@@ -11,7 +10,6 @@ import {
 } from "@/components/ui/card"
 import { Room } from "@/db/schema";
 import { GithubIcon } from "lucide-react";
-import { get } from "http";
 import { getRooms } from "@/data-access/rooms";
 
 
