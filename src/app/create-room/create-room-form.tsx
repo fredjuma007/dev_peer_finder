@@ -21,7 +21,7 @@ const formSchema = z.object({
   name: z.string().min(1).max(50),
   description: z.string().min(1).max(200),
   githubRepo: z.string().min(1).max(200),
-  language: z.string().min(1).max(100),
+  tags: z.string().min(1).max(100),
 })
 
 export function CreateRoomForm() {
@@ -98,15 +98,15 @@ export function CreateRoomForm() {
 
 <FormField
             control={form.control}
-            name="language"
+            name="tags"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Language</FormLabel>
+                <FormLabel>Tags</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} placeholder="javascript, ReactJs, tailwind"/>
                 </FormControl>
                 <FormDescription>
-                  Please provide the primary language of your project.
+                  List your programming languages, frameworks and libraries.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
