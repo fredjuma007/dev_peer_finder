@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Room } from "@/db/schema";
-import { GithubIcon, Tag } from "lucide-react";
+import { GithubIcon, Search, Tag } from "lucide-react";
 import { getRooms } from "@/data-access/rooms";
 import { TagsList, splitTags } from "@/components/tags-list";
+import { SearchBar } from "./search-bar";
 
 
 function RoomCard({room}: {room: Room}) {
@@ -46,8 +47,17 @@ function RoomCard({room}: {room: Room}) {
   )
 }
 
-export default async function Home() {
-  const rooms = await getRooms();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: {
+    search: string
+  };
+}) {
+
+  const rooms = await getRooms(searchParams.search
+    
+  );
 
   return (
     <main className="min-h-screen p-24">
@@ -57,6 +67,10 @@ export default async function Home() {
         <Link href="/create-room">Create Room</Link>
       </Button>
       </div>
+
+    <div className="mb-12">
+      <SearchBar />
+    </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {rooms.map((room) => {
