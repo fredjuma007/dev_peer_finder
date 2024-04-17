@@ -13,7 +13,7 @@ import { getRooms } from "@/data-access/rooms";
 import { TagsList } from "@/components/tags-list";
 import { splitTags } from "@/lib/utils";
 import { GithubIcon } from "lucide-react";
-import { SearchBar } from "@/app/search-bar";
+import { SearchBar } from "@/app/browse/search-bar";
 
 
 export function RoomCard({room}: {room: Room}) {
