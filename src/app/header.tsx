@@ -64,7 +64,7 @@ export function Header() {
                     DevPeerFinder
                     </Link>
 
-                    <nav>
+                    <nav className="flex gap-8">
                       {isLoggedIn && (
                         <>
                         <Link href="/browse" className="mr-4 hover:underline">

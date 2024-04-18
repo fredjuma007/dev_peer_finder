@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { room } from "@/db/schema";
+import { Room, room } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { like } from "drizzle-orm";
 import { getSession } from "@/lib/auth";
@@ -32,4 +32,15 @@ export async function getRoom(roomId: string) {
 
 export async function deleteRoom(roomId: string) {
   await db.delete(room).where(eq(room.id, roomId));
+}
+
+export async function createRoom(
+  roomData: Omit<Room, "id" | "userId">,
+  userId: string
+) {
+  await db.insert(room).values({...roomData, userId})
+}
+
+export async function editRoom( roomData: Room) {
+  await db.update(room).set(roomData).where(eq(room.id, roomData.id));
 }
