@@ -32,13 +32,14 @@ export function CreateRoomForm() {
         defaultValues: {
           name: "",
           description: "",
+          githubRepo: "",
+          tags: "",
         },
       })
 
      async function onSubmit(values: z.infer<typeof formSchema>) {
-       await createRoomAction(values); 
-       await createRoomAction(values)
-       router.push("/")
+       await createRoomAction(values);
+       router.push("/your-rooms")
       }
 
       return (
