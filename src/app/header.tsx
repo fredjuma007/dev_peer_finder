@@ -51,8 +51,8 @@ export function Header() {
     const isLoggedIn = !!session.data;
 
     return (
-        <header className="bg-gray-200 py-2 dark:bg-gray-900 container mx-auto z-10 relative">
-            <div className="flex justify-between items-center">
+        <header className="bg-gray-200 py-2 dark:bg-gray-900 z-10 relative">
+            <div className="container mx-auto flex justify-between items-center">
             
                     <Link href="/" className="flex gap-2 items-center text-xl hover:underline">
                     <Image
