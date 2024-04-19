@@ -13,7 +13,7 @@ import { Room } from '@/db/schema';
         StreamVideoClient,
       } from '@stream-io/video-react-sdk';
 import { useSession } from 'next-auth/react';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { generateTokenAction } from "./action";
 import { useRouter } from "next/navigation";
       
@@ -61,7 +61,7 @@ import { useRouter } from "next/navigation";
             <StreamCall call={call}>
                 <SpeakerLayout />
                 <CallControls onLeave={() => {
-                    router.push('/');
+                    router.push('/browse');
                 }} />
                 <CallParticipantsList onClose={() => undefined} />
             </StreamCall>
