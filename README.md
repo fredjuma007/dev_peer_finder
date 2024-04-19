@@ -36,3 +36,9 @@ THE INTERFACE ⬇️⬇️⬇️
 ![Alt Text](screenshots/create-room.png)
 ![Alt Text](screenshots/your-room.png)
 ![Alt Text](screenshots/video-chat.png)
+
+you can support me by giving a star to this repo ⭐️
+```
+also you can financially support me by buying me a coffee ☕️
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://www.buymeacoffee.com/fredjuma)
+```
