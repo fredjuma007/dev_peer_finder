@@ -1,3 +1,8 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.5/src/app/ci.min.css"
+/>
+
 Welcome to DevPeerFinder!
 A website that helps developers find other developers to collaborate with on projects.
 You can share your screen and code with others in real-time, and chat with them as well.
