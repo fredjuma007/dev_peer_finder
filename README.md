@@ -16,6 +16,7 @@ You can share your screen and code with others in real-time, and chat with them 
 - Docker
 - Drizzle ORM
 - PostgreSQL
+<i className="ci ci-postgresql ci-2x"></i>
 - next-auth (google cloud)
 - getstream.io (chat) API
 - shadcn (UI library)
