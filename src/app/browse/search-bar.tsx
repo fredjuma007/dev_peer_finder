@@ -47,7 +47,7 @@ export function SearchBar() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2 md:flex-row">
         <FormField
           control={form.control}
           name="search"
@@ -56,7 +56,7 @@ export function SearchBar() {
               <FormControl>
                 <Input
                   {...field}
-                  className="w-[440px]"
+                  className="w-full md:w-[440px]"
                   placeholder="Filter rooms by keywords, such as typescript, next.js, python"
                 />
               </FormControl>
@@ -65,21 +65,23 @@ export function SearchBar() {
           )}
         />
 
-        <Button type="submit">
-          <SearchIcon className="mr-2" /> Search
-        </Button>
-
-        {query.get("search") && (
-          <Button
-            variant="link"
-            onClick={() => {
-              form.setValue("search", "");
-              router.push("/");
-            }}
-          >
-            Clear
+        <div className="flex flex-col md:flex-row md:gap-2">
+          <Button type="submit" className="w-full md:w-auto">
+            <SearchIcon className="mr-2" /> Search
           </Button>
-        )}
+
+          {query.get("search") && (
+            <Button
+              variant="link"
+              onClick={() => {
+                form.setValue("search", "");
+                router.push("/");
+              }}
+            >
+              Clear
+            </Button>
+          )}
+        </div>
       </form>
     </Form>
   );
