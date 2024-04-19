@@ -22,6 +22,8 @@ You can share your screen and code with others in real-time, and chat with them 
 	<code><img width="55" src="https://user-images.githubusercontent.com/25181517/117208740-bfb78400-adf5-11eb-97bb-09072b6bedfc.png" alt="PostgreSQL" title="PostgreSQL"/></code>
 	<code><img width="55" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png" alt="Docker" title="Docker"/></code>
 </div>
+
+## More libraries and APIs used
 - next-auth (google cloud)
 - getstream.io (chat) API
 - shadcn (UI library)
