@@ -128,8 +128,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <ModeToggle />
-
+          
           <div className="md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -160,7 +159,11 @@ export function Header() {
             <Button onClick={() => signIn()} variant="link">
               <LogInIcon className="mr-2" /> Sign In
             </Button>
+            
           )}
+          
+          <ModeToggle />
+          
         </div>
       </div>
     </header>
