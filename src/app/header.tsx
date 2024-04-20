@@ -114,42 +114,6 @@ export function Header() {
           DevPeer
         </Link>
 
-        <div className="flex items-center gap-4">
-          <ModeToggle />
-
-          {isLoggedIn && <AccountDropdown />}
-          {!isLoggedIn && (
-            <Button onClick={() => signIn()} variant="link">
-              <LogInIcon className="mr-2" /> Sign In
-            </Button>
-          )}
-        </div>
-
-        <div className="md:hidden">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant={"link"}>Menu</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {isLoggedIn && (
-                <>
-                  <DropdownMenuItem>
-                    <Link href="/browse" className="hover:underline">
-                      Browse
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <Link href="/your-rooms" className="hover:underline">
-                      Your Rooms
-                    </Link>
-                  </DropdownMenuItem>
-                </>
-              )}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-        
         <nav className="hidden md:flex gap-8">
           {isLoggedIn && (
             <>
@@ -162,6 +126,42 @@ export function Header() {
             </>
           )}
         </nav>
+
+        <div className="flex items-center gap-4">
+          <ModeToggle />
+
+          <div className="md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant={"link"}>Menu</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {isLoggedIn && (
+                  <>
+                    <DropdownMenuItem>
+                      <Link href="/browse" className="hover:underline">
+                        Browse
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <Link href="/your-rooms" className="hover:underline">
+                        Your Rooms
+                      </Link>
+                    </DropdownMenuItem>
+                  </>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
+          {isLoggedIn && <AccountDropdown />}
+          {!isLoggedIn && (
+            <Button onClick={() => signIn()} variant="link">
+              <LogInIcon className="mr-2" /> Sign In
+            </Button>
+          )}
+        </div>
       </div>
     </header>
   );

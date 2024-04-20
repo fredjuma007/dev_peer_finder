@@ -32,65 +32,62 @@ import { deleteRoomAction } from "./actions";
 export function UserRoomCard({room}: {room: Room}) {
   return (
     <Card>
-  <CardHeader className="relative">
-    <Button className="absolute top-2 right-2" size="icon">
-      <Link href={`/edit-room/${room.id}`}>
-      <PencilIcon />
-      </Link>
-    </Button>
-    <CardTitle>{room.name}</CardTitle>
-    <CardDescription>{room.description}</CardDescription>
-  </CardHeader>
-  <CardContent className="flex flex-col gap-4">
-  <TagsList tags={splitTags(room.tags)} />
-    {room.githubRepo && (
-    <Link 
-    href={room.githubRepo} 
-    className="flex items-center gap-2"
-    target="_blank"
-    rel="noopener noreferrer"
-    >
-      <GithubIcon />
-      Github Project
-      </Link>
-    )}
-    
-  </CardContent>
-  <CardFooter className="flex gap-20">
-    <Button asChild>
-      <Link href={`/room/${room.id}`}>Join Room</Link>
-    </Button>
+      <CardHeader className="relative">
+        <Button className="absolute top-2 right-2" size="icon">
+          <Link href={`/edit-room/${room.id}`}>
+            <PencilIcon />
+          </Link>
+        </Button>
+        <CardTitle>{room.name}</CardTitle>
+        <CardDescription>{room.description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <TagsList tags={splitTags(room.tags)} />
+        {room.githubRepo && (
+          <Link
+            href={room.githubRepo}
+            className="flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon />
+            Github Project
+          </Link>
+        )}
+      </CardContent>
+      <CardFooter className="flex flex-col gap-4 md:flex-row md:justify-between">
+        <Button asChild>
+          <Link href={`/room/${room.id}`}>Join Room</Link>
+        </Button>
 
-     <AlertDialog>
-  <AlertDialogTrigger asChild>
-  <Button
-    variant={"destructive"} >
-     <TrashIcon className="w-4 h-4 mr-2" /> Delete Room 
-     </Button>
-  </AlertDialogTrigger>
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-      <AlertDialogDescription>
-        This action cannot be undone. 
-        This will permanently delete the room and all of its data.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Cancel</AlertDialogCancel>
-      <AlertDialogAction 
-       onClick={() => {
-          // delete room
-          deleteRoomAction(room.id);
-       }}
-       >
-        Yes Delete
-        </AlertDialogAction>
-    </AlertDialogFooter>
-  </AlertDialogContent>
-</AlertDialog>
-  </CardFooter>
-</Card>
-
-  )
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant={"destructive"}>
+              <TrashIcon className="w-4 h-4 mr-2" /> Delete Room
+            </Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete the
+                room and all of its data.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={() => {
+                  // delete room
+                  deleteRoomAction(room.id);
+                }}
+              >
+                Yes Delete
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </CardFooter>
+    </Card>
+  );
 }
