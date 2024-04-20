@@ -111,7 +111,7 @@ export function Header() {
             height="50"
             alt="the DevPeerFinder logo"
           />
-          DevPeer
+          {/*DevPeer: logo name*/}
         </Link>
 
         <nav className="hidden md:flex gap-8">
