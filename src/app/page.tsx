@@ -32,7 +32,7 @@ export default function LandingPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-200">
               This platform is for sharing your screen and working with other
-              random developers online so that you can work together
+              random developers online so that you debug or code together.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
